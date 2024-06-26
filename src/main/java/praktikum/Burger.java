@@ -10,10 +10,12 @@ import java.util.List;
  * Можно распечать чек с информацией о бургере.
  */
 public class Burger {
+    private Bun bun;
+    private List<Ingredient> ingredients;
 
-    public Bun bun;
-    public List<Ingredient> ingredients = new ArrayList<>();
-
+    public Burger() {
+        ingredients = new ArrayList<>();
+    }
     public void setBuns(Bun bun) {
         this.bun = bun;
     }
@@ -53,5 +55,7 @@ public class Burger {
 
         return receipt.toString();
     }
-
+    public List<Ingredient> getIngredients() {
+        return new ArrayList<>(ingredients); // Возвращаем копию списка ингредиентов
+    }
 }
